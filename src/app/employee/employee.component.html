@@ -1,0 +1,47 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let use of Emp;index as i">
+        <th scope="row" >{{i+1}}</th> 
+         <td>{{use.username}}</td>
+        <td>{{use.email}}</td>
+        <td>{{use.password}}</td>
+        <td>
+          <Button class="btn-success" (click)="update(use,i)">Update</Button>
+          <Button class="btn-danger" (click)="delete(use)">Delete</Button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--  Form -->
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-10">
+        <input type="text" name="username" value="name"  class="form-control" ngModel #username>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" name="email" value="email" ngModel class="form-control" #email>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" name="password" value="password" ngModel class="form-control" #password>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{editMode? 'Update':'Add'}}</button>
+  </form>
