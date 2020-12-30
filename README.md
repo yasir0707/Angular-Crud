@@ -1,5 +1,6 @@
-# App2
+# Angular with mongodb 
 
+In this project angular crud operation performed by using nodejs,express,mongdb
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
 ## Development server
